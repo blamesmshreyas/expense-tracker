@@ -4,12 +4,10 @@ from datetime import datetime
 
 FILE_NAME = "expenses.csv"
 
-# Create file and header
 def initialize_file():
     file = open(FILE_NAME, "a", newline="")
     file.close()
 
-# Add expense
 def add_expense():
     date = datetime.now().strftime("%Y-%m-%d")
     category = input("Enter category: ")
@@ -23,7 +21,6 @@ def add_expense():
 
     print("Expense added successfully!")
 
-# Show expenses
 def show_expenses():
     file = open(FILE_NAME, "r")
     reader = csv.reader(file)
@@ -36,7 +33,6 @@ def show_expenses():
 
     file.close()
 
-# Show graph
 def show_graph():
     file = open(FILE_NAME, "r")
     reader = csv.reader(file)
@@ -63,7 +59,6 @@ def show_graph():
     plt.ylabel("Amount")
     plt.show()
 
-# Main menu
 def main():
     initialize_file()
 
@@ -88,3 +83,4 @@ def main():
             print("Invalid choice")
 
 main()
+
